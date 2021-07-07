@@ -59,12 +59,55 @@ public class Calculator {
                 break;
 
             case "multiply":
-                System.out.println("You want to multiply.");
+                System.out.println("Enter two doubles:");
+                // Instantiate variables
+                double mult1;
+                double mult2;
+                // Nested if to check if input is of type int. If not, break out of case statement.
+                if (input.hasNextDouble()) {
+                    mult1 = input.nextDouble();
+                    if (input.hasNextDouble()) {
+                        mult2 = input.nextDouble();
+                    }
+                    else {
+                        System.out.println("Invalid input entered. Terminating...");
+                        break;
+                    }
+                }
+                else {
+                    System.out.println("Invalid input entered. Terminating...");
+                    break;
+                }
+                // Print result
+                double multResult = mult1 * mult2;
+                System.out.printf("Answer: %.2f\n",multResult);
                 break;
-                
+
             case "divide":
-                System.out.println("You want to divide.");
+                System.out.println("Enter two doubles:");
+                // Instantiate variables
+                double div1;
+                double div2;
+                // Nested if to check if input is of type int. If not, break out of case statement.
+                if (input.hasNextDouble()) {
+                    div1 = input.nextDouble();
+                    if (input.hasNextDouble()) {
+                        div2 = input.nextDouble();
+                    }
+                    else {
+                        System.out.println("Invalid input entered. Terminating...");
+                        break;
+                    }
+                }
+                else {
+                    System.out.println("Invalid input entered. Terminating...");
+                    break;
+                }
+                // Print result
+                double divResult = div1 / div2;
+                System.out.printf("Answer: %.2f\n",divResult);
                 break;
+
             case "alphabetize":
                 System.out.println("You want to alphabetize.");
                 break;

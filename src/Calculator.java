@@ -109,8 +109,38 @@ public class Calculator {
                 break;
 
             case "alphabetize":
-                System.out.println("You want to alphabetize.");
+                System.out.println("Enter two words:");
+                // Instantiate variables
+                String word1;
+                String word2;
+                // Nested if to check if input is of type int. If not, break out of case statement.
+                if (input.hasNext()) {
+                    word1 = input.next();
+                    if (input.hasNext()) {
+                        word2 = input.next();
+                    }
+                    else {
+                        System.out.println("Invalid input entered. Terminating...");
+                        break;
+                    }
+                }
+                else {
+                    System.out.println("Invalid input entered. Terminating...");
+                    break;
+                }
+                // Make comparison
+                int wordComp = word1.toLowerCase().compareTo(word2.toLowerCase());
+                if (wordComp == -1) {
+                    System.out.println("Answer: " + word1 + " comes before " + word2 + " alphabetically.");
+                }
+                else if (wordComp == 1) {
+                    System.out.println("Answer: " + word2 + " comes before " + word1 + " alphabetically.");
+                }
+                else {
+                    System.out.println("Answer: Chicken or Egg.");
+                }
                 break;
+
             default:
                 System.out.println("Invalid input entered. Terminating...");
                 break;

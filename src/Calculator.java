@@ -93,6 +93,11 @@ public class Calculator {
                     div1 = input.nextDouble();
                     if (input.hasNextDouble()) {
                         div2 = input.nextDouble();
+                        if (div2 == 0) {
+                            System.out.println("Invalid input entered. Terminating...");
+                            break;
+                        }
+
                     }
                     else {
                         System.out.println("Invalid input entered. Terminating...");
@@ -130,10 +135,10 @@ public class Calculator {
                 }
                 // Make comparison
                 int wordComp = word1.toLowerCase().compareTo(word2.toLowerCase());
-                if (wordComp == -1) {
+                if (wordComp < 0) {
                     System.out.println("Answer: " + word1 + " comes before " + word2 + " alphabetically.");
                 }
-                else if (wordComp == 1) {
+                else if (wordComp > 0) {
                     System.out.println("Answer: " + word2 + " comes before " + word1 + " alphabetically.");
                 }
                 else {
